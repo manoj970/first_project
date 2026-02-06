@@ -49,4 +49,47 @@ No,
 
 it will delete the variables
 
+=========================================Data Types====================================================
+
+1.What is a data type in Python?
+
+A data type will tells the python what kind of values is holds by the variable and what are the operations allowed to perform
+
+2.Name the main built-in data types.
+
+int ,float ,boolean ,string ,list ,tuple ,dictionary ,set 
+
+4.What is the difference between mutable and immutable types?
+
+Mutable :which can be changed or modified
+
+Immutable :which cannot be changed or modified
+
+5.Is int primitive or non-primitive in Python? Explain.
+
+int is non primitive,because python do not have primitive data types int has methods to perform in python
+
+6.What does type() function do?
+
+type()function will displays the data type of the variable
+
+7.What happens when you convert float to int?
+
+python will remove the decimal part and returns integer data
+
+8.Why do we need different data types?
+
+Different data types will helps in memory management we can use memory efficently ,it helps in operations allowed to be performed and it will make the code easy to understand 
+
+9.Give an example of when to use list vs tuple.
+
+Lists are used when data is need to change they are mutable,Tuples are used when the data is not need of mofication or changes because tuples are immutable
+
+10.What is a dictionary used for?
+
+dictionary will store the data in **Key - Value** form they used for fast lookups
+
+
+
+
 
