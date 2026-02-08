@@ -50,9 +50,10 @@ product_details = {
                     "Is Active": {is_active},
         
     }
+# print the initial product details
 print("================================ Initial Product Details ===============================")
 print(f"Product_DEtails: {product_details}")
-
+# Inventory transactions function to manage stock changes and wallet balance
 def inventory_transactions(new_transaction):
     global wallet_balance , inventory_history
     print("================================ Inventory History ===============================")
@@ -62,14 +63,14 @@ def inventory_transactions(new_transaction):
     wallet_balance += new_transaction 
     print(f"Stock Transactions after adding: {inventory_history}")
     print(f"Updated Wallet Balance: {wallet_balance}")
-
+# function to add stock
 def add_stock(new_stock):
     global current_stock
     print("================================ Stock Update ===============================")
     print(f"Current Stock before addition: {current_stock}")
     current_stock += new_stock
     print(f"Current Stock after addition: {current_stock}")
-
+# function to deduct stock
 def deduct_stock(stock_to_deduct):
     global current_stock
     print("================================ Stock Deduction ===============================")
@@ -80,20 +81,21 @@ def deduct_stock(stock_to_deduct):
     else:
         current_stock -= stock_to_deduct
         print(f"Current Stock after deduction: {current_stock}")
+# function to manage the supplier credentials by adding new credentials         
 def manage_supplier_credentials(new_cred):
     global supplier_cred
     print("================================ Supplier Credentials ===============================")
     print(f"Current Supplier Credentials: {supplier_cred}")
     supplier_cred += (new_cred,)
     print(f"Updated Supplier Credentials: {supplier_cred}")
-
+# function to manage warehouse locations by adding new location
 def manage_warehouse_locations(new_location):
     global warehouse_locations
     print("================================ Warehouse Locations ===============================")
     print(f"Current Warehouse Locations: {warehouse_locations}")
     warehouse_locations.add(new_location)
     print(f"Updated Warehouse Locations: {warehouse_locations}")
-
+# function to pass alert messages
 def alert_system():
     global current_stock, REORDER_THRESHOLD, MINIMUM_STOCK_LEVEL
     print("================================ Alert System ===============================")
@@ -104,7 +106,7 @@ def alert_system():
             print(" ⚠️⚠️ Alert: Stock is at very low ,reorder immediately.")
     else:
         print(" Stock level is sufficient.")
-
+# Display the final product information 
 def display_product_info():        
     print("================================ Final Product Info ===============================")
     print(f"product name: {product_name}")
@@ -114,7 +116,7 @@ def display_product_info():
     print(f"wallet balance: {wallet_balance}")
     print(f"Location: {warehouse_locations}")
     print(f"Supplier Credentials: {supplier_cred}")
-
+# Main function to execute all operations in sequence
 def main():
     inventory_transactions(2000)
     add_stock(100)
@@ -122,7 +124,7 @@ def main():
     manage_supplier_credentials("SUP999")
     manage_warehouse_locations("warehouse_F")
     alert_system()
-    display_product_info()
+    display_product_info()    
 if __name__ == "__main__":
     main()    
 
