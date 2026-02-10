@@ -90,6 +90,54 @@ Lists are used when data is need to change they are mutable,Tuples are used when
 dictionary will store the data in **Key - Value** form they used for fast lookups
 
 
+==================Integers=================================
+
+1. What makes Python integers different from those in languages like C or Java?
+
+Because they support **Arbitary Precision** (they can grow to any size limit by availbe memory).
+In python all are non premitive data types in python integers are also objects they have in-built methods.
+
+2. Explain arbitrary precision and give an example where it's useful.
+
+It means integers can have unlimited number of digits it is usefull in big number multiplications eg(2**1000+1)
+
+3. What is the difference between / and // for integer division?
+
+(/) operator performs the true division(5/2 == 2.5). (//) operator performs floor division (5//2 == 2,-5//2 == -3 )
+
+4. How do you represent and convert binary/octal/hex integers?
+
+To represent the different integer bases, for binary we use **0b** prefix octal with **0o** and hexadecimal with **0x** . For convertions we use bin() for binary ,oct() for octal and hex() for hexadecimal
+
+5. What happens if you try int("abc") and how to handle it?
+
+It displays the value error ,to handle it we have to change the int object to string(str)
+
+6. Why are integers immutable, and what does that mean for performance?
+
+In python there are fixed hash values for integers for safety and predictablity integers are immutable ones they exist theeir value is fixed
+
+7. Integer caching in Python (and its range)
+
+It means python caches small integers to avoid repeated allocations it ranges (-5 to 256)
+
+8. How does bit_length() work, and when is it useful?
+
+bit_length() method returns the number of bits necessary to represent the value of an integer it is useful in bit manipulation,determining storage need or algorithms
+
+9. Explain negative integers in binary representation in Python.
+
+we use bin() method eg: bin(-3) == -'ob11'
+
+10. Is int primitive or non-primitive in Python, and why does it matter?
+
+int is non primitive in python it matters for its flexibility
+
+
+
+
+
+
 
 
 

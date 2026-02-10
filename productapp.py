@@ -1,4 +1,4 @@
-# =======================================TO- DO'S=========================================
+# =======================================TO - DO'S=========================================
 ## for Learners: Product-Oriented Application to get started with Variables
 # USE CASE: ProductApp
 
@@ -27,7 +27,7 @@
 # 5. Check inventory against alert threshold
 # 6. Display product category and supplier details
 
-# Initialize the variables
+# Initialize the variables 
 application_name = "ProductApp"
 product_name = "smartphone"
 product_catogory = "electronics"
