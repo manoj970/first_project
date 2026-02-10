@@ -134,6 +134,61 @@ we use bin() method eg: bin(-3) == -'ob11'
 int is non primitive in python it matters for its flexibility
 
 
+==============Functions==============================
+
+1.What is a function in Python?
+
+A function means you can group the code you can name it and use it when you need
+
+2.Why do we use functions instead of writing code directly?
+
+To avoid repeatation organize code in structured form if we want to make any changes we only change a particular function not the entire code
+
+
+3.What is the difference between parameters and arguments?
+
+parameter means variable listed in the function 'def add(x,y)' ,arguments means actual passed to the function when calling it'add(5,4)'
+
+
+4.What does return do? What if a function has no return?
+
+return send the value back to the caller and immediately exits the function
+
+
+5.Explain default parameters with example.
+
+you can assign default parameters to the function
+
+def greet(name="Guest", greeting="Hello"):
+
+    print(f"{greeting}, {name}!")
+
+6.What are *args and **kwargs?
+
+*args collects extra positional arguments to tuple
+
+**kwargs collects extra key words arguments to dictionary
+
+7.What is function scope? What is local vs global variable?
+
+Function scope means where variables live local means within the function,global means out of the function
+
+8.Can a function call itself? (hint: recursion – later topic)
+
+9.How do you call a function with keyword arguments?
+
+by specifying the parameter name explicitily when calling
+`def person(name, age, city):
+    print(f"{name} is {age} years old from {city}")
+
+ Keyword arguments (order can change)
+person(age=30, city="Hyderabad", name="Manoj")`
+
+10.What happens if you forget () when calling a function?
+
+the output displays <function say_hello at 0x0000026128BFBB60>
+
+
 
 
 
