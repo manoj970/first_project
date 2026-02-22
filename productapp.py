@@ -54,13 +54,13 @@ print(f"Reorder Threshold: {REORDER_THRESHOLD}")
 # validate product data
 if product_name == "":
  print("⚠️Warning: Product name cannot be empty.")
-if supplier_id <= 0:
+elif supplier_id <= 0:
     print("⚠️Warning: Supplier ID is incorrectr.")
-if current_stock < 0:
+elif current_stock < 0:
     print("⚠️Warning: Current stock cannot be negative.")
-if _sku == "":
+elif _sku == "":
     print("⚠️Warning: SKU cannot be empty.")
-if is_active :
+elif is_active :
    print("✅ Product is active and available.")
 else:
     print("❌ Product is discontinued.")
@@ -71,9 +71,9 @@ print("""============BASIC CHECKS ARE DONE============""")
 if current_stock <= REORDER_THRESHOLD:
             print("  Alert: Stock is low reorder the product.")
             print(" Reorder the product soon to avoid stockouts.")
-if current_stock <= MIN_STOCK_LEVEL:
+elif current_stock <= MIN_STOCK_LEVEL:
             print("  ⚠️Alert:stock is running critically low, immediate action required.")
-if current_stock <=0:
+elif current_stock <=0:
             print(" product is out of stock")
 else:
             print(" Stock level is sufficient.")        
