@@ -41,6 +41,21 @@ def main():
     print("\nFinal Product Details:")
     display_product()
     display_user_operations()
+    # list comphrehension
+    print (f"the transaction history is: {inventory_transaction_history}\n")
+    debit_trans = [(stock,timestamp) for stock, timestamp in inventory_transaction_history if stock < 0]
+    print(f"the debit transactions are:{debit_trans}\n")
+
+    # set comphrehensions
+
+    new_location = "Hyderabad"
+    warehouse_location = {location for location in warehouse_locations if location != new_location}| {new_location}
+    print(f"the warehouse locations are: {warehouse_location}\n")
+    # dictionary comphrehensions
+    print(inventory_transaction_history)
+    transaction_summary = {stock :timestamp for stock ,timestamp in inventory_transaction_history}
+    print("=================================================\n")
+    print(transaction_summary)
 
     # transaction filteration
     start_date = input("Enter start date (YYYY-MM-DD): ")
@@ -48,6 +63,7 @@ def main():
     start_date = datetime.strptime(start_date, "%Y-%m-%d")
     end_date = datetime.strptime(end_date, "%Y-%m-%d")
     transaction_filter(start_date, end_date)
+
 
 
 if __name__ == "__main__":

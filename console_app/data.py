@@ -1,4 +1,6 @@
 from datetime import datetime
+from array import array
+inventory_transaction_history_array = array("i", [1000, -200, 500, -300, 400])
 inventory_transaction_history = [
     (1000.0, datetime(2024, 6, 1, 10, 0)),
     (-200.0, datetime(2024, 6, 2, 14, 30)),

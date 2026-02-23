@@ -25,6 +25,8 @@ def transaction_filter(start_date, end_date):
         for stock , timestamp in inventory_transaction_history:
             if start_date <= timestamp <= end_date:
                 print(f"Stock change: {stock}, Time: {timestamp.strftime('%Y-%m-%d %H:%M:%S')}")
+            else:
+                raise InvalidDateError(f"Transaction date is invalid")    
     except InvalidDateError as e:
         print(f"the invalid date error was caught: {e}")           
     except Exception as e:
@@ -84,4 +86,20 @@ def total_inventory_value():
     except Exception as e:
         print(f"the error was caught: {e}")
     finally:
-        print("View total inventory value attempted.")            
+        print("View total inventory value attempted.") 
+
+def stock_report(filename):
+    global inventory_transaction_history
+    try:
+        with open(filename, 'w') as file:
+            for stock, timestamp in inventory_transaction_history:
+             file.write(f"{stock} : {timestamp.strftime('%Y-%m-%d %H:%M:%S')}\n") 
+             print("Stock report generated successfully.")
+    except Exception as e:
+        print("the error was caught: ",e)   
+stock_report("stock_report.txt")                 
+
+
+
+   
+                
