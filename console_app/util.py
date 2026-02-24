@@ -1,5 +1,5 @@
+from datetime import datetime
 calculate_discount = lambda price, percent: price - (price * percent / 100)
-
 
 def transaction_generator(transactions):
     for index, (stock , timestamp) in enumerate(transactions):

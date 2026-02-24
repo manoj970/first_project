@@ -1,9 +1,14 @@
 from console_app.operations import *
 def display_product():
     print("========== PRODUCT DETAILS ==========")
-    for key, value in product_details.items():
-        print(f"{key} : {value}")
-    print("=====================================")
+    try:
+        for key, value in product_details.items():
+            print(f"{key} : {value}")
+        print("=====================================")
+    except Exception as e:
+        print (f"the error was caught: {e}")   
+    finally:
+        print("display product attempted.")    
 
     
 def display_user_operations():
