@@ -1,1 +1,3 @@
 {"timestamp ": "2026-02-23 11:52:50", "action": "Stock updated from 100 to 0", "stock": -100}
+{"timestamp ": "2026-03-04 09:01:45", "action": "Stock updated from 100 to 450", "stock": 350}
+{"timestamp ": "2026-03-09 14:09:13", "action": "stock updation is failed", "stock": 100}

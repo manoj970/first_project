@@ -2,7 +2,7 @@ from console_app.operations import *
 def display_product():
     print("========== PRODUCT DETAILS ==========")
     try:
-        for key, value in product_details.items():
+        for key, value in Inventory.product_details:
             print(f"{key} : {value}")
         print("=====================================")
     except Exception as e:

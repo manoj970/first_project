@@ -49,7 +49,7 @@ def main():
     # set comphrehensions
 
     new_location = "Hyderabad"
-    warehouse_location = {location for location in warehouse_locations if location != new_location}| {new_location}
+    warehouse_location = {location for location in Inventory.warehouse_locations if location != new_location}| {new_location}
     print(f"the warehouse locations are: {warehouse_location}\n")
     # dictionary comphrehensions
     print(inventory_transaction_history)

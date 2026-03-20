@@ -190,9 +190,152 @@ the output displays <function say_hello at 0x0000026128BFBB60>
 
 
 
+==============Regular Expressions ================================
 
 
 
 
 
+
+
+
+
+
+
+* special methods:
+- these are predefined methods in python that have special meaning and are used to define the behavior of the class, they are also called magic methods or dunder methods (double underscore), they are used to implement operator overloading, object representation, and other special behaviors of the class
+__init__: called when an object is created, used to initialize the attributes of the class
+__str__: called when the object is printed, used to define the string representation of the object
+__repr__: called when the object is printed in the interactive shell, used to define the official string representation of the object
+__add__: called when the + operator is used, used to define the behavior of the + operator for the class
+__sub__: called when the - operator is used, used to define the behavior of the - operator for the class
+__mul__: called when the * operator is used, used to define the behavior of the * operator for the class
+__truediv__: called when the / operator is used, used to define the behavior of the / operator for the class
+__len__: called when the len() function is used, used to define the behavior of the len() function for the class
+__eq__: called when the == operator is used, used to define the behavior of the == operator for the class
+__lt__: called when the < operator is used, used to define the behavior of the < operator for the class
+__gt__: called when the > operator is used, used to define the behavior of the > operator for the class
+__call__: called when the object is called as a function, used to define the behavior of the object when it is called as a function
+__getitem__: called when the object is indexed, used to define the behavior of the object when it is indexed
+__setitem__: called when the object is indexed and assigned a value, used to define the behavior of the object when it is indexed and assigned a value
+__delitem__: called when the object is indexed and deleted, used to define the behavior of the object when it is indexed and deleted
+__iter__: called when the object is iterated over, used to define the behavior of the object when it is iterated over
+__next__: called when the object is iterated over, used to define the behavior of the object when it is iterated over
+__enter__: called when the object is used in a with statement, used to define the behavior of the object when it is used in a with statement
+__exit__: called when the object is used in a with statement, used to define the behavior of the object when it is used in a with statement
+
+# Python OOP — Today's Learning Summary
+
+---
+
+## 1. The `__init__` Constructor
+
+`__init__` is automatically called when an object is created. It initializes the object's attributes upfront instead of setting them manually after creation.
+
+```python
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+
+user1 = User("Vinod", "vinod@example.com")
+```
+
+**Why `self`?**
+When you call `user1.greet()`, Python rewrites it as `User.greet(user1)` — automatically passing the instance as the first argument. That's `self`. It can be named anything, but `self` is the convention.
+
+---
+
+## 2. Types of Methods
+
+### Instance Methods
+The most common type. Operate on a specific object's data. Receive `self` as the first parameter.
+
+```python
+def bark(self):
+    print(f"{self.name} barks!")
+```
+
+### Class Methods (`@classmethod`)
+Operate on the **class itself**, not a specific instance. Receive `cls` as the first parameter. Can be called directly on the class.
+
+```python
+@classmethod
+def get_count(cls):
+    print(f"Total dogs: {cls.total_dogs}")
+```
+
+> **Key insight:** Without `@classmethod`, Python treats the method as an instance method. If you call it on the class directly (e.g. `Dog.get_count(10)`), `cls` just receives `10` — not the class. The decorator is what tells Python to **automatically inject the class** as the first argument.
+
+### Static Methods (`@staticmethod`)
+Utility functions that belong to the class logically but don't need access to instance or class data. No `self` or `cls`.
+
+```python
+@staticmethod
+def info():
+    print("Dogs are loyal animals.")
+```
+
+| | Instance Method | Class Method | Static Method |
+|---|---|---|---|
+| First arg | `self` (instance) | `cls` (class) | nothing |
+| Access instance data | ✅ | ❌ | ❌ |
+| Access class data | via `self.__class__` | ✅ | ❌ |
+| Call on class directly | ❌ | ✅ | ✅ |
+
+---
+
+## 3. Dunder / Magic Methods
+
+Special methods with double underscores that define how objects behave with built-in operations.
+
+### Representation
+```python
+def __str__(self):   # used by print() — for end users
+    return f"User: {self.name}"
+
+def __repr__(self):  # used in console/debugging — for developers
+    return f"User(name='{self.name}')"
+```
+
+> **Always define `__repr__`** at minimum — if `__str__` is missing, Python falls back to it. Without either, you get `<__main__.User object at 0x...>`.
+
+### Arithmetic Operators
+```python
+def __add__(self, other):      # +
+def __sub__(self, other):      # -
+def __mul__(self, other):      # *
+def __truediv__(self, other):  # /
+```
+
+> **Common mistake:** Using `print()` inside `__add__` instead of `return`. This makes the result `None` when you do `user3 = user1 + user2`.
+
+### Comparison Operators
+```python
+def __eq__(self, other):   # ==
+def __lt__(self, other):   # <
+def __gt__(self, other):   # >
+def __len__(self):         # len()
+```
+
+### Other Useful Dunders
+
+| Method | Triggered by |
+|---|---|
+| `__call__(self)` | `obj()` — calling the object like a function |
+| `__getitem__(self, key)` | `obj[key]` |
+| `__setitem__(self, key, val)` | `obj[key] = val` |
+| `__delitem__(self, key)` | `del obj[key]` |
+| `__iter__(self)` | `for x in obj` |
+| `__enter__` / `__exit__` | `with obj:` block |
+
+---
+
+## 4. Key Takeaways
+
+- **`__init__`** sets up each object's unique state at creation time
+- **`self`** is automatically passed by Python — it's the instance calling the method
+- **`@classmethod`** injects the class; without it, Python sees a regular instance method
+- **Always `return`** from `__add__` and other operator methods — never `print` inside them
+- **Always define `__repr__`** so your objects display meaningfully instead of memory addresses
 
