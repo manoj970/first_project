@@ -7,9 +7,9 @@ class Tree:
         self.right = None
 root = Tree(20)
 root.left = Tree(10)
-root.right = Tree(25)
-root.left.left = Tree(5)
-def max_depth(root):
+root.right = Tree(25)#                  20
+root.left.left = Tree(5)#            10    25
+def max_depth(root):#              5 
     if not root:
         return 0
     queue = deque([root]) 
@@ -23,4 +23,4 @@ def max_depth(root):
                 queue.append(node.right)
         depth +=1
     return depth
-print(max_depth(root) )                      
+print(max_depth(root))                      

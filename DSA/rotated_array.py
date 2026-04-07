@@ -1,3 +1,4 @@
+
 def min_value(nums):
  n=len(nums)
  for i in range(n-1):

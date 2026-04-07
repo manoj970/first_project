@@ -12,7 +12,6 @@ class Linkedlist:
         if not self.head:
             self.head = new_value
             return
-        
         current = self.head
         while current.next:
             current = current.next
